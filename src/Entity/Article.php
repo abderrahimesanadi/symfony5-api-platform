@@ -6,6 +6,7 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use Symfony\Component\Serializer\Annotation\Groups;
 use ApiPlatform\Core\Annotation\ApiFilter;
 use App\CustomSearchFilter\OrSearchFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use App\Repository\ArticleRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -19,7 +20,7 @@ use Doctrine\ORM\Mapping as ORM;
  *     },
  *     normalizationContext={"groups"={"article"}}
  *     )
- * @ApiFilter(OrSearchFilter::class, properties={"name":"partial", "content":"partial", "Tag.id":"exact"})
+ * @ApiFilter(SearchFilter::class, properties={"name":"partial", "content":"partial", "Tag.id":"exact"})
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
  */
 class Article
