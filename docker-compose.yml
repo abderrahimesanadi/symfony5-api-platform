@@ -4,8 +4,10 @@ services:
   db:
     image: mysql
     container_name: db_smart_doctrina
+    command: --init-file /data/application/init.sql
     volumes:
       - db_data:/var/lib/mysql
+      - ./dump_mysql/doctrina.sql:/data/application/init.sql
     restart: always
     environment: 
        MYSQL_ALLOW_EMPTY_PASSWORD : 'yes'
