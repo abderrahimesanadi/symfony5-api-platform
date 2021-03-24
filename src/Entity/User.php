@@ -12,6 +12,8 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ApiResource()
+ * @ApiFilter(SearchFilter::class, properties={"email": "exact"})
  * @ORM\Entity(repositoryClass=UserRepository::class)
  */
 class User
@@ -20,11 +22,13 @@ class User
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"article","comment"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"article","comment"})
      */
     private $username;
 
