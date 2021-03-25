@@ -2,7 +2,7 @@ Pour demarrer l'application il suffit d'avoir docker et docker-compose installé
 
 docker-compose up -d 
 
-apres pourdes probles de timing j'ai pas pu automatiser certains taches pour cela il faut ajouter ces commandes pour que l'application marche bien :
+apres pour des problemes de timing j'ai pas pu automatiser certains taches pour cela il faut ajouter ces commandes pour que l'application marche bien :
 
 sudo docker exec -it www_docker_symfony bash
 
