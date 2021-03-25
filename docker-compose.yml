@@ -36,6 +36,8 @@ services:
             - ./docker/vhosts:/etc/apache2/sites-enabled
             - ./:/var/www
         restart: always
+        command: > 
+          bash -c "chown -R www-data:www-data var/"
         networks:
             - dev
 

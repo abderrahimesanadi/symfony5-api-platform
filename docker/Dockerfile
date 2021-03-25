@@ -16,10 +16,4 @@ RUN docker-php-ext-configure intl
 RUN docker-php-ext-install pdo pdo_mysql gd opcache intl zip calendar dom mbstring zip gd xsl
 RUN pecl install apcu && docker-php-ext-enable apcu
 
-USER root
-# RUN usermod -u 1000 www-data    # fix the UID
-RUN mkdir -p var/cache/prod var/cache/dev var/cache/test var/log \
-   && chown -R www-data:www-data var/ \
-   && chmod -R ug+rwX var/
-
 WORKDIR /var/www/
