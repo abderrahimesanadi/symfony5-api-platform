@@ -32,6 +32,8 @@ services:
         container_name: www_docker_symfony
         ports:
           - "8082:80"
+        command: composer install
+        command: chown -R www-data:www-data var/  
         volumes:
             - ./docker/vhosts:/etc/apache2/sites-enabled
             - ./:/var/www

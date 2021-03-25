@@ -22,4 +22,6 @@ RUN mkdir -p var/cache/prod var/cache/dev var/cache/test var/log \
    && chown -R www-data:www-data var/ \
    && chmod -R ug+rwX var/
 
+RUN composer install
+
 WORKDIR /var/www/
